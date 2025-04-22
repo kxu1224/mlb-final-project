@@ -17,7 +17,7 @@ This repository explores fine-tuning Google's [TxGemma](https://developers.googl
 ## ⚙️ Technical Approach
 
 **Base Model**  
-[TxGemma]([https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/]) (9B-27B parameter, TxGemma models, fine-tuned from Gemma 2 using 7 million training examples, are open models designed for prediction and conversational therapeutic data analysis.)
+[TxGemma](https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/) (9B-27B parameter, TxGemma models, fine-tuned from Gemma 2 using 7 million training examples, are open models designed for prediction and conversational therapeutic data analysis.)
 
 **Key Components**  
 1. **GRPO Algorithm**: Modified RL approach from [DeepSeek-R1]([https://arxiv.org/pdf/2501.12948])
