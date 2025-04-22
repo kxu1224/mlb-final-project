@@ -5,7 +5,7 @@
 
 ## 🧬 Project Overview
 
-This repository explores fine-tuning Google's [TxGemma](https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/) (a specialized biomedical LLM) using DeepSeek's **GRPO reinforcement learning algorithm** through Unsloth's efficient training framework. We investigate whether RL-driven "reasoning" enhancement can improve small-molecule therapeutic development capabilities in non-reasoning-optimized models.
+This repository explores fine-tuning Google's [TxGemma](https://developers.googleblog.com/en/introducing-txgemma-open-models-improving-therapeutics-development/) (An LLM specialized for therapeutic applications) using DeepSeek's **GRPO reinforcement learning algorithm** through Unsloth's efficient training framework. We investigate whether RL-driven "reasoning" enhancement can improve small-molecule therapeutic development capabilities in non-reasoning-optimized models.
 
 ## 🔑 Key Features
 
