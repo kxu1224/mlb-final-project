@@ -34,3 +34,7 @@ This repository explores fine-tuning Google's [TxGemma](https://developers.googl
 | [Original TxGemma Colab](https://colab.research.google.com/github/google-gemini/gemma-cookbook/blob/main/TxGemma/[TxGemma]Finetune_with_Hugging_Face.ipynb) | Google's SFT implementation baseline |
 | [GRPO Paper]([https://arxiv.org/pdf/2501.12948]) | DeepSeek's RL optimization methodology |
 | [Unsloth Docs](https://github.com/unslothai/unsloth) | Memory-efficient training framework |
+
+## Checkpoint OneDrive Link
+https://gtvault-my.sharepoint.com/:f:/g/personal/cchoudhry3_gatech_edu/EmdVcR1_VPhBtWHqeA_grGkB8jAhRU1mLObsZoYFHfujYw?e=kMHnAd
+Since the checkpoints are too large to store on GitHub we're adding a link here with the TxGemma Checkpoints at various GRPO training stages.
