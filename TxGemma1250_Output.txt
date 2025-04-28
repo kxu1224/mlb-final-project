@@ -1,0 +1,221 @@
+from tqdm import tqdm
+
+for example in dataset.select(range(10)):
+    out = peft_model.generate(
+        **tokenizer(example["prompt"], return_tensors="pt").to(device),
+        do_sample=False,  # greedy for clarity
+        max_new_tokens=200,
+        pad_token_id=tokenizer.eos_token_id,
+    )
+    print(tokenizer.decode(out[0], skip_special_tokens=True))
+
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: Safety, Tolerability and Pharmacokinetics of Single and Repeat Doses of GSK2292767 in Healthy Participants Who Smoke Cigarettes
+Summary: This study is the first administration of GSK2292767 to humans. The study will evaluate the safety, tolerability, pharmacokinetics (PK) and pharmacodynamics (PD) of single and repeat inhaled doses of GSK2292767 in healthy smokers. This study is intended to provide sufficient confidence in the safety of the molecule and preliminary information on target engagement to allow progression to further repeat dose and proof of mechanism studies. This is a two part, single site, randomized, double-blind (sponsor open), placebo controlled study. Part A will consist of two 3-period interlocking cohorts to evaluate the safety, tolerability and pharmacokinetics of ascending single doses of GSK2292767 administered as a dry powder inhalation. Part B is planned to follow Part A and progression will be based on an acceptable safety, tolerability and pharmacokinetic profiles. Subjects will receive repeat doses of GSK2292767 once daily for 14 days during Part B.     
+Phase: 1
+Disease: Asthma
+Minimum age: 18 Years
+Maximum age: 50 Years
+Healthy volunteers: Accepts Healthy Volunteers
+Interventions: GSK2292767 50 μg blended with lactose and magnesium stearate per blister as powder for inhalation; GSK2292767 500 μg blended with lactose and magnesium stearate per blister as powder for inhalation; Lactose as powder for inhalation
+Drug: Not available
+
+Answer:148
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: Bioequivalence Study of Favipiravir 200 mg Film Tablet (ATABAY, Turkey) Under Fasting Conditions
+Summary: A single dose of Reference product containing 200 mg favipiravir and a single dose of Test product containing 200 mg favipiravir or vice versa; administered with 240 mL of water at room temperature, in each period under fasting conditions with current pandemic precautions.     
+Phase: 1
+Disease: Bioequivalence
+Minimum age: 20 Years
+Maximum age: 40 Years
+Healthy volunteers: Accepts Healthy Volunteers
+Interventions: FAVICOVIR 200 MG FT is containing 200 mg favipiravir manufactured by Atabay, Turkey.; AVIGAN 200 mg FT is containing 200 mg favipiravir manufactured by Toyama, Japan.
+Drug: Not available
+
+Answer:189
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: A Study To Estimate The Effect of PF-06650833 On The Pharmacokinetics (PK) of Oral Contraceptive (OC)
+Summary: This is a Phase 1, open label, fixed sequence study of the effect of multiple dose PF-06650833 on single dose OC PK in healthy female subjects.     
+Phase: 1
+Disease: Healthy
+Minimum age: 18 Years
+Maximum age: 60 Years
+Healthy volunteers: Accepts Healthy Volunteers
+Interventions: 400 mg by mouth (PO) Once daily (QD) for 11 days; Single dose of Oral tablet containing 30 ug EE and 150 ug of LN
+Drug: CC[C@H]1[C@@H](COC2=C3C=C(OC)C(=CC3=CC=N2)C(N)=O)NC(=O)[C@H]1F.[H][C@@]12CC[C@H](O)[C@@]1(C)CC[C@]1([H])C3=C(CC[C@@]21[H])C=C(O)C=C3
+
+Answer:188
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: The Maraviroc Darunavir/Ritonavir Once Daily Pharmacokinetic Study
+Summary: This is a phase I, open label, prospective, two phase pharmacokinetic study. Subjects currently attending for HIV care at St. Mary's Hospital, London will be eligible.     
+Phase: 1
+Disease: HIV
+Minimum age: 18 Years
+Maximum age: 65 Years
+Healthy volunteers: No
+Interventions: Maraviroc 150 mg daily; daily until 10. day then stop; daily until 10. day then stop
+Drug: CC(C)C1=NN=C(C)N1[C@H]1C[C@@H]2CC[C@H](C1)N2CC[C@H](NC(=O)C1CCC(F)(F)CC1)C1=CC=CC=C1.[H][C@@]12CCO[C@]1([H])OC[C@@H]2OC(=O)N[C@@H](CC1=CC=CC=C1)[C@H](O)CN(CC(C)C)S(=O)(=O)C1=CC=C(N)C=C1
+
+Answer:188
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: A Study of LY3009120 in Participants With Advanced Cancer or Cancer That Has Spread to Other Parts of Their Body
+Summary: The main purpose of this study is to see how safe the investigational drug known as LY3009120 is and whether it will work to help people with advanced cancer or cancer that has spread to other parts of the body.     
+Phase: 1
+Disease: Neoplasms; Neoplasm Metastasis; Melanoma; Carcinoma, Non-Small-Cell Lung; Colorectal Neoplasms
+Minimum age: 18 Years
+Maximum age: Not available
+Healthy volunteers: No
+Interventions: Administered orally.
+Drug: Not available
+
+Answer:299
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: Safety, Tolerability and PK of Multiple-ascending Doses of Emodepside
+Summary: The study evaluates safety, tolerability, pharmacokinetics (PK) and pharmacodynamics (PD) of emodepside, after administration as a Liquid Service Formulation (LSF), over 10 days, in healthy male caucasian subjects.     
+Phase: 1
+Disease: Filariasis
+Minimum age: 18 Years
+Maximum age: 45 Years
+Healthy volunteers: Accepts Healthy Volunteers
+Interventions: Emodepside administered as an LSF oral solution (1mg/mL)
+Drug: [H][C@]1(C)OC(=O)[C@]([H])(CC(C)C)N(C)C(=O)[C@@]([H])(CC2=CC=C(C=C2)N2CCOCC2)OC(=O)[C@]([H])(CC(C)C)N(C)C(=O)[C@@]([H])(C)OC(=O)[C@]([H])(CC(C)C)N(C)C(=O)[C@@]([H])(CC2=CC=C(C=C2)N2CCOCC2)OC(=O)[C@]([H])(CC(C)C)N(C)C1=O
+
+Answer:188
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: Drug-drug Interaction Study of Gepotidacin
+Summary: This study is a drug-drug interaction (DDI), pharmacokinetics (PK), safety and tolerability study in adult healthy participants, including Japanese cohort. This study is designed to assess co-administration of probe substrates with gepotidacin in study cohorts 1 to 3 and establishing PK and safety in Japanese participants in cohort 4. Food effect will also be evaluated in cohort 4.     
+Phase: 1
+Disease: Infections, Bacterial
+Minimum age: 18 Years
+Maximum age: 50 Years
+Healthy volunteers: Accepts Healthy Volunteers
+Interventions: Gepotidacin tablets will be available as unit dose strength 750 mg and will be administered orally.; Cimetidine tablets will be available as unit dose strength 400 mg and will be administered orally.; Rifampicin Capsules will be available as unit dose strength 300 mg and will be administered orally.; Midazolam oral syrup 2 milligrams per milliliter (mg/mL) will be available to be administered orally.; Digoxin tablets will be available as unit dose strength 0.25 mg and will be administered orally.; Placebo matching to gepotidacin tablets will be administered orally.
+Drug: O=C1C=CC2=C3N1C[C@@H](CN1CCC(CC1)NCC1=CC4=C(OCCC4)C=N1)N3C(=O)C=N2.CN\C(NCCSCC1=C(C)NC=N1)=N\C#N.CO[C@H]1\C=C\O[C@@]2(C)OC3=C(C2=O)C2=C(O)C(\C=N\N4CCN(C)CC4)=C(NC(=O)\C(C)=C/C=C/[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C)C(O)=C2C(O)=C3C.CC1=NC=C2CN=C(C3=CC=CC=C3F)C3=C(C=CC(Cl)=C3)N12.[H][C@]12CC[C@]3([H])[C@]([H])(C[C@@H](O)[C@]4(C)[C@H](CC[C@]34O)C3=CC(=O)OC3)[C@@]1(C)CC[C@@H](C2)O[C@H]1C[C@H](O)[C@H](O[C@H]2C[C@H](O)[C@H](O[C@H]3C[C@H](O)[C@H](O)[C@@H](C)O3)[C@@H](C)O2)[C@@H](C)O1.O=C1C=CC2=C3N1C[C@@H](CN1CCC(CC1)NCC1=CC4=C(OCCC4)C=N1)N3C(=O)C=N2
+
+Answer:188
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: A Study of LY3819253 (LY-CoV555) in Healthy Participants
+Summary: The purpose of this study is to test the safety and tolerability of LY3819253 when it is given by injection just under the skin to healthy participants. Blood tests will be done to check how much LY3819253 is in the bloodstream and how long the body takes to eliminate it. Participation could last up to 16 weeks and may include up to six visits to the study center, with a one-week overnight stay.     
+Phase: 1
+Disease: Healthy
+Minimum age: 18 Years
+Maximum age: 60 Years
+Healthy volunteers: Accepts Healthy Volunteers
+Interventions: Administered SC.; Administered SC.
+Drug: Not available
+
+Answer:16
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: Vincristine, Doxorubicin, And Dexamethasone + Ixazomib in Acute Lymphoblastic Leukemia (ALL), Lymphoblastic Lymphoma Or Mixed Phenotype Acute Leukemia
+Summary: This is a phase I study of vincristine, doxorubicin and dexamethasone (modified VXD) plus MLN9708 in adults with relapsed or refractory acute lymphoblastic leukemia/lymphoma, lymphoblastic lymphoma or mixed phenotype acute leukemia.     
+Phase: 1
+Disease: Relapsed or Refractory Acute Lymphoblastic Leukemia; Relapsed or Refractory Lymphoblastic Lymphoma; Mixed Phenotype Acute Leukemia
+Minimum age: 18 Years
+Maximum age: Not available
+Healthy volunteers: No
+Interventions: Not available
+Drug: [H][C@@]12N3CC[C@@]11C4=C(C=C(OC)C(=C4)[C@]4(C[C@H]5C[N@](C[C@](O)(CC)C5)CCC5=C4NC4=CC=CC=C54)C(=O)OC)N(C=O)[C@@]1([H])[C@](O)([C@H](OC(C)=O)[C@]2(CC)C=CC3)C(=O)OC.COC1=CC=CC2=C1C(=O)C1=C(O)C3=C(C[C@](O)(C[C@@H]3O[C@H]3C[C@H](N)[C@H](O)[C@H](C)O3)C(=O)CO)C(O)=C1C2=O.[H][C@@]12C[C@@H](C)[C@](O)(C(=O)CO)[C@@]1(C)C[C@H](O)[C@@]1(F)[C@@]2([H])CCC2=CC(=O)C=C[C@]12C
+
+Answer:188
+Respond in the following format:
+<reasoning>
+...
+</reasoning>
+<answer>
+...
+</answer>
+
+From the following information about a clinical trial, predict whether it would have an adverse event.
+
+Title: Effectiveness of Ivermectin as add-on Therapy in COVID-19 Management
+Summary: Comparing the effectiveness of Ivermectin( IVM) +Hydroxychloroquin + azithromycin (AZT) group to Hydroxychloroquin (HCQ) + azithromycin (AZT)     
+Phase: 1
+Disease: COVID 19
+Minimum age: 18 Years
+Maximum age: Not available
+Healthy volunteers: No
+Interventions: Ivermectin 0.2 mg /kg (single dose at once =2 tablets of 6mg/weekly
+Drug: [H][C@@]12OC\C3=C/C=C/[C@H](C)[C@H](O[C@H]4C[C@H](OC)[C@@H](O[C@H]5C[C@H](OC)[C@@H](O)[C@H](C)O5)[C@H](C)O4)\C(C)=C\C[C@]4([H])C[C@@]([H])(C[C@]5(CC[C@H](C)[C@]([H])(O5)C(C)C)O4)OC(=O)[C@]([H])(C=C(C)[C@H]1O)[C@@]23O.[H][C@@]12OC\C3=C/C=C/[C@H](C)[C@H](O[C@H]4C[C@H](OC)[C@@H](O[C@H]5C[C@H](OC)[C@@H](O)[C@H](C)O5)[C@H](C)O4)\C(C)=C\C[C@]4([H])C[C@@]([H])(C[C@]5(CC[C@H](C)[C@]([H])(O5)[C@@H](C)CC)O4)OC(=O)[C@]([H])(C=C(C)[C@H]1O)[C@@]23O
+
+Answer:186
